@@ -1,0 +1,28 @@
+name: LIFEQUEST pre-APK checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.17.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: node --test tests/*.test.mjs
+      - run: pnpm run typecheck
+      - run: pnpm --filter @workspace/lifequest build
+      - name: Verify production output
+        run: test -f artifacts/lifequest/dist/public/index.html
+      - name: Upload web build for inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: lifequest-web-pre-apk
+          path: artifacts/lifequest/dist/public/

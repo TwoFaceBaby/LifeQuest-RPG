@@ -1,0 +1,64 @@
+TAP version 13
+# Subtest: life systems are persisted in primary app state and normalized for older backups
+ok 1 - life systems are persisted in primary app state and normalized for older backups
+  ---
+  duration_ms: 0.866804
+  type: 'test'
+  ...
+# Subtest: life systems expose check-in, capacity planner, forecasts, exchange rates and cosmetic unlocks
+ok 2 - life systems expose check-in, capacity planner, forecasts, exchange rates and cosmetic unlocks
+  ---
+  duration_ms: 0.187437
+  type: 'test'
+  ...
+# Subtest: local advisor covers business, learning, health and employment
+ok 3 - local advisor covers business, learning, health and employment
+  ---
+  duration_ms: 0.86395
+  type: 'test'
+  ...
+# Subtest: advisor avoids unsupported numeric probabilities
+ok 4 - advisor avoids unsupported numeric probabilities
+  ---
+  duration_ms: 0.14862
+  type: 'test'
+  ...
+# Subtest: pre-APK source includes all primary persistence operations
+ok 5 - pre-APK source includes all primary persistence operations
+  ---
+  duration_ms: 0.731674
+  type: 'test'
+  ...
+# Subtest: quest rewards and level formula are defined
+ok 6 - quest rewards and level formula are defined
+  ---
+  duration_ms: 0.166266
+  type: 'test'
+  ...
+# Subtest: advanced world is connected and includes expected modules
+ok 7 - advanced world is connected and includes expected modules
+  ---
+  duration_ms: 1.369869
+  type: 'test'
+  ...
+# Subtest: Android build configuration exists without creating APK
+ok 8 - Android build configuration exists without creating APK
+  ---
+  duration_ms: 0.152445
+  type: 'test'
+  ...
+# Subtest: PWA assets are present
+ok 9 - PWA assets are present
+  ---
+  duration_ms: 0.114991
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 67.480949

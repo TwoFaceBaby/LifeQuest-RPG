@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "LIFEQUEST: Reality RPG"
+description = "A mobile-first real-life progression app where users create a character, complete meaningful quests, grow skills, track achievements, and manage a local-currency wallet. Core features work offline with data stored on the user's device."
+version = "1.0.0"
+id = "artifacts/lifequest"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24521
+
+[services.development]
+run = "pnpm --filter @workspace/lifequest run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/lifequest", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/lifequest/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24521"
+BASE_PATH = "/"
