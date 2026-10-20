@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: '22'
           cache: pnpm
-      - run: pnpm install --frozen-lockfile
+      - run: pnpm install --no-frozen-lockfile
       - run: node --test tests/*.test.mjs
       - run: pnpm run typecheck
       - run: pnpm --filter @workspace/lifequest build
